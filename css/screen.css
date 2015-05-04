@@ -180,7 +180,7 @@ p + p {
   top: 400px;
   left: 0;
   right: 0;
-  height: 1200px;
+  min-height: 500px;
   background-color: #556688; }
 
 #frontpage-about {
@@ -217,4 +217,13 @@ p + p {
   @media screen and (max-width: 700px) {
     #frontpage-aboutme {
       padding: 40px;
-      margin-top: -60px; } }
+      margin-top: -60px;
+      font-size: 20px; } }
+  #frontpage-aboutme li {
+    white-space: nowrap;
+    margin: 3px 0; }
+    #frontpage-aboutme li:hover span {
+      color: #fff; }
+  #frontpage-aboutme a {
+    color: #ccaf77;
+    text-decoration: none; }

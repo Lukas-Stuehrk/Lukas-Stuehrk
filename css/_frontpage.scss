@@ -25,7 +25,7 @@ $frontpage-image-width-small: 140px;
     }
 
     a {
-      display: block;
+      display:         block;
       padding:         10px;
       color:           #556688;
       text-decoration: none;
@@ -203,7 +203,7 @@ $frontpage-image-width-small: 140px;
     top:              400px;
     left:             0;
     right:            0;
-    height:           1200px;
+    min-height:       500px;
     background-color: #556688;
   }
 
@@ -232,15 +232,34 @@ $frontpage-image-width-small: 140px;
     @include column(4);
     @include column-small(12);
 
+    $text-color: #ccaf77;
+
     padding-right: 100px;
     padding-top:   100px;
 
     font-size:     30px;
-    color:         #ccaf77;
+    color:         $text-color;
 
     @include small {
       padding:    40px;
       margin-top: -60px; // TODO
+      font-size:  20px;
+    }
+
+    li {
+      white-space: nowrap;
+      margin: 3px 0;
+
+      &:hover {
+        span {
+          color: #fff;
+        }
+      }
+    }
+
+    a {
+      color: $text-color;
+      text-decoration: none;
     }
   }
 }
