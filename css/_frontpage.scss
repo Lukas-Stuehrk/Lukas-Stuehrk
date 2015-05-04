@@ -1,0 +1,247 @@
+@import "functions";
+@import "grid";
+
+$frontpage-image-width: 400px;
+$frontpage-image-width-small: 140px;
+
+@include exports("frontpage") {
+  $color-notimportant: #ccc;
+  $topnav-height: 50px;
+
+  #fixednav {
+
+    position:         fixed;
+    left:             0;
+    right:            0;
+    top:              0;
+    height:           $topnav-height;
+    background-color: #fff;
+    z-index:          100;
+    transition:       top 0.2s;
+    box-shadow:       0 0 3px #333;
+
+    &.hidden {
+      top: -$topnav-height * 2;
+    }
+
+    a {
+      display: block;
+      padding:         10px;
+      color:           #556688;
+      text-decoration: none;
+      font-size:       30px;
+    }
+  }
+
+  #frontpage-heading {
+    color:    #556688;
+
+    // The heading is a new stacking context to align the individual parts of the heading.
+    position: absolute;
+    top:      0;
+    left:     0;
+    right:    $frontpage-image-width;
+
+    span {
+      display:     block;
+      white-space: nowrap;
+    }
+
+    @media screen and(max-width: 700px) {
+      right: 0; // The image moves from the right to the top on small screens so we need no space to the right.
+    }
+  }
+
+  #frontpage-gruesz-gott {
+    position:  absolute;
+    left:      50px;
+    top:       50px;
+
+    font-size: 50px;
+
+    @media screen and(max-width: 950px) {
+      display: none !important;
+    }
+  }
+
+  #frontpage-heading-namegroup {
+    position: absolute;
+    right:    0;
+    top:      -20px;
+
+    @media screen and(max-width: 950px) {
+      left: 0;
+    }
+
+    #frontpage-ich-heisze {
+      font-size: 50px;
+      color:     $color-notimportant;
+
+      position:  absolute;
+      right:     480px;
+      top:       130px;
+
+      @media screen and (min-width: 1400px) {
+        font-size: 60px;
+
+        right:     500px;
+        top:       120px;
+      }
+
+      @media screen and (max-width: 1100px) {
+        font-size: 50px;
+
+        top:       110px;
+        right:     0;
+      }
+
+      @media screen and (max-width: 950px) {
+        display: none;
+      }
+    }
+
+    #frontpage-name {
+      font-size: 100px;
+
+      position:  absolute;
+      right:     0;
+      top:       150px;
+      color:     #333;
+
+      @media screen and(max-width: 950px) {
+        left:       0; // So it will have the full width and the text can be centered
+        top:        100px;
+
+        font-size:  80px;
+        text-align: center;
+      }
+
+      @media screen and(max-width: 920px) {
+        font-size: 60px;
+      }
+
+      @media screen and(max-width: 700px) {
+        top: 160px;
+      }
+
+      @media screen and(max-width: 320px) {
+        font-size: 50px;
+      }
+    }
+  }
+
+  #frontpage-heading-jobgroup {
+    position: absolute;
+    right:    0;
+    top:      250px;
+
+    @media screen and(max-width: 950px) {
+      left: 0;
+      top:  200px;
+    }
+
+    #frontpage-jobtitle {
+
+      font-size: 40px;
+      color:     #444;
+
+      @media screen and(max-width: 950px) {
+        left:       0;
+        right:      0;
+        text-align: center;
+      }
+
+      @media screen and(max-width: 920px) {
+        font-size: 30px;
+      }
+
+      @media screen and(max-width: 800px) {
+        font-size: 20px;
+      }
+    }
+
+    #frontpage-und-bin {
+      color:    $color-notimportant;
+      position: absolute;
+      left:     -20px;
+      top:      -20px;
+
+      @media screen and(max-width: 950px) {
+        display: none;
+      }
+    }
+  }
+
+  #frontpage-image {
+    background-image: url(../lukas.jpg);
+    width:            $frontpage-image-width;
+    height:           $frontpage-image-width;
+    border-radius:    $frontpage-image-width;
+    background-size:  $frontpage-image-width;
+
+    position:         absolute;
+    right:            -60px;
+    top:              -60px;
+
+    @media screen and(max-width: 700px) {
+      position:        absolute;
+      left:            50%;
+      top:             0;
+      margin-left:     -$frontpage-image-width-small / 2;
+
+      width:           $frontpage-image-width-small;
+      height:          $frontpage-image-width-small;
+      border-radius:   $frontpage-image-width-small;
+      background-size: $frontpage-image-width-small;
+    }
+  }
+
+  #frontpage-content {
+    @include row;
+
+    position:         absolute;
+    top:              400px;
+    left:             0;
+    right:            0;
+    height:           1200px;
+    background-color: #556688;
+  }
+
+  #frontpage-about {
+    @include column(8);
+    @include column-small(12);
+
+    font-size:   30px;
+    line-height: 1.2;
+    text-align:  justify;
+    color:       #fff;
+
+    padding:     100px;
+
+    @include medium {
+      padding:   50px;
+      font-size: 25px;
+    }
+
+    @include small {
+      font-size: 20px;
+    }
+  }
+
+  #frontpage-aboutme {
+    @include column(4);
+    @include column-small(12);
+
+    padding-right: 100px;
+    padding-top:   100px;
+
+    font-size:     30px;
+    color:         #ccaf77;
+
+    @include small {
+      padding:    40px;
+      margin-top: -60px; // TODO
+    }
+  }
+}
+

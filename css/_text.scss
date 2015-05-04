@@ -1,0 +1,7 @@
+@import "functions";
+
+@include exports("text") {
+  p + p{
+    margin-top: 1em;
+  }
+}
