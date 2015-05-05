@@ -1,4 +1,7 @@
 @import "functions";
 
 @include exports("mainlayout") {
+  html {
+    overflow-x: hidden;
+  }
 }
