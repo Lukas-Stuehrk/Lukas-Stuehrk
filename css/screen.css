@@ -52,6 +52,13 @@ p + p {
 html {
   overflow-x: hidden; }
 
+body {
+  font-family: Lato, 'Helvetica Neue', sans-serif;
+  font-weight: 100; }
+  @media screen and (max-width: 700px) {
+    body {
+      font-weight: 200; } }
+
 #fixednav {
   position: fixed;
   left: 0;
@@ -82,7 +89,8 @@ html {
     white-space: nowrap; }
   @media screen and (max-width: 700px) {
     #frontpage-heading {
-      right: 0; } }
+      right: 0;
+      top: 30px; } }
 
 #frontpage-gruesz-gott {
   position: absolute;
@@ -185,7 +193,7 @@ html {
     #frontpage-image {
       position: absolute;
       left: 50%;
-      top: 0;
+      top: 20px;
       margin-left: -70px;
       width: 140px;
       height: 140px;
@@ -199,6 +207,9 @@ html {
   right: 0;
   min-height: 500px;
   background-color: #556688; }
+  @media screen and (max-width: 700px) {
+    #frontpage-content {
+      top: 300px; } }
 
 #frontpage-about {
   float: left;

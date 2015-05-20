@@ -49,6 +49,7 @@ $frontpage-image-width-small: 140px;
 
     @media screen and(max-width: 700px) {
       right: 0; // The image moves from the right to the top on small screens so we need no space to the right.
+      top:   30px;
     }
   }
 
@@ -186,7 +187,7 @@ $frontpage-image-width-small: 140px;
     @media screen and(max-width: 700px) {
       position:        absolute;
       left:            50%;
-      top:             0;
+      top:             20px;
       margin-left:     -$frontpage-image-width-small / 2;
 
       width:           $frontpage-image-width-small;
@@ -205,6 +206,10 @@ $frontpage-image-width-small: 140px;
     right:            0;
     min-height:       500px;
     background-color: #556688;
+
+    @media screen and(max-width: 700px) {
+      top: 300px;
+    }
   }
 
   #frontpage-about {
@@ -248,7 +253,7 @@ $frontpage-image-width-small: 140px;
 
     li {
       white-space: nowrap;
-      margin: 3px 0;
+      margin:      3px 0;
 
       &:hover {
         span {
@@ -258,7 +263,7 @@ $frontpage-image-width-small: 140px;
     }
 
     a {
-      color: $text-color;
+      color:           $text-color;
       text-decoration: none;
     }
   }
